@@ -109,10 +109,12 @@ button:focus {
       font-size: 1.5rem;
       border: 2px solid #45c3bd;
       border-radius: 20px;
+      box-shadow: 0 0 4px #000;
       cursor: pointer;
       &:hover {
         opacity: 0.8;
         border-width: 4px;
+        box-shadow: 0 0 0;
       }
     }
   }
