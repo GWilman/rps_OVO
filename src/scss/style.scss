@@ -1,0 +1,50 @@
+* {
+  box-sizing: border-box;
+  font-family: Verdana, sans-serif;
+  text-align: center;
+}
+
+body {
+  background: #e9e9e9;
+  margin: 0;
+}
+
+main {
+  height: calc(100vh - 79px);
+  width: 70%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+}
+
+h1 {
+  margin: 0;
+  padding: 20px 0;
+}
+
+.gameboard {
+  width: 100%;
+
+  .picks {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+
+    div {
+      width: 33%;
+    }
+  }
+
+  .buttonContainer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+    button {
+      width: 15%;
+    }
+  }
+
+}
