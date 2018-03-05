@@ -1,10 +1,17 @@
 import React from 'react';
 
-const Scoreboard = ({ playerScore, computerScore }) => {
+const Scoreboard = ({ playerScore, computerScore, reset }) => {
   return (
     <div className="scoreboard">
-      <div>Player: {playerScore}</div>
-      <div>Computer: {computerScore}</div>
+      <div>
+        <p>Player</p>
+        <p>{playerScore}</p>
+      </div>
+      <button onClick={reset}>Reset</button>
+      <div>
+        <p>Computer</p>
+        <p>{computerScore}</p>
+      </div>
     </div>
   );
 };

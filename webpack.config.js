@@ -8,10 +8,10 @@ const HtmlWebpack = new HtmlWebpackPlugin({
   inject: 'body'
 });
 
-// const CopyWebpackPlugin = require('copy-webpack-plugin');
-// const CopyWebpack = new CopyWebpackPlugin([
-//   { from: './src/assets', to: 'assets' }
-// ]);
+const CopyWebpackPlugin = require('copy-webpack-plugin');
+const CopyWebpack = new CopyWebpackPlugin([
+  { from: './src/assets', to: 'assets' }
+]);
 
 const HotModuleReplcement = new webpack.HotModuleReplacementPlugin();
 
@@ -40,5 +40,5 @@ module.exports = {
     port: 8000,
     open: true
   },
-  plugins: [HotModuleReplcement, HtmlWebpack]
+  plugins: [HotModuleReplcement, HtmlWebpack, CopyWebpack]
 };
