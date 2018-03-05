@@ -7,6 +7,8 @@
 }
 
 body {
+  height: 100vh;
+  width: 100vw;
   background: #cbfff8;
   background-image: url('/assets/images/pattern.png');
   margin: 0;
@@ -48,6 +50,9 @@ button:focus {
 
     div {
       width: 33%;
+      p {
+        margin: 0;
+      }
     }
 
     #winner {
@@ -112,4 +117,39 @@ button:focus {
     }
   }
 
+}
+
+@media only screen and (max-width: 800px) {
+  h1 {
+    font-size: 3rem;
+  }
+  main {
+    width: 90%;
+    .gameboard {
+      .picks {
+        p {
+          font-size: 1.2rem;
+        }
+        #winner {
+          font-size: 2rem;
+        }
+      }
+      .buttonContainer {
+        button {
+          width: 30%;
+        }
+      }
+      .scoreboard {
+        div {
+          p {
+            font-size: 1.5rem;
+          }
+        }
+        button {
+          width: 30%;
+          font-size: 1rem;
+        }
+      }
+    }
+  }
 }

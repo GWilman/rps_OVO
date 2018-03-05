@@ -4,9 +4,15 @@ const Picks = ({ playerPick, winner, computerPick }) => {
 
   return (
     <div className="picks">
-      <div>Player: <span id="playerPick">{playerPick}</span></div>
+      <div>
+        <p>Player:</p>
+        <p>{playerPick}</p>
+      </div>
       <div><span id="winner">{winner}</span></div>
-      <div>Computer: <span id="computerPick">{computerPick}</span></div>
+      <div>
+        <p>Computer:</p>
+        <p>{computerPick}</p>
+      </div>
     </div>
   );
 
