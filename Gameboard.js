@@ -1,5 +1,9 @@
 import React, { Component } from 'react';
 
+import Scoreboard from './components/Scoreboard';
+import Buttons from './components/Buttons';
+import Picks from './components/Picks';
+
 class Gameboard extends Component {
 
   constructor() {
@@ -52,16 +56,16 @@ class Gameboard extends Component {
   render() {
     return (
       <div className="gameboard">
-        <div className="picks">
-          <div>Player: <span id="playerPick">{this.state.playerPick}</span></div>
-          <div><span id="winner">{this.state.winner}</span></div>
-          <div>Computer: <span id="computerPick">{this.state.computerPick}</span></div>
-        </div>
-        <div className="buttonContainer">
-          <button value="Rock" onClick={this.play.bind(this)} disabled={this.state.playing}>Rock</button>
-          <button value="Paper" onClick={this.play.bind(this)} disabled={this.state.playing}>Paper</button>
-          <button value="Scissors" onClick={this.play.bind(this)} disabled={this.state.playing}>Scissors</button>
-        </div>
+        <Picks
+          playerPick={this.state.playerPick}
+          winner={this.state.winner}
+          computerPick={this.state.computerPick}
+        />
+        <Buttons
+          play={this.play.bind(this)}
+          playing={this.state.playing}
+        />
+        <Scoreboard />
       </div>
     );
   }
