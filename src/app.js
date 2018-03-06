@@ -23,7 +23,6 @@ class App extends Component {
       playerPick: null,
       computerPick: null,
       winner: 'Choose wisely',
-      playing: false,
       playerScore: 0,
       computerScore: 0
     };
@@ -32,16 +31,13 @@ class App extends Component {
 
   play(e) {
     // update player pick, disable buttons and clear winner text
-    this.setState({ playerPick: e.target.value, playing: true, winner: null, computerPick: null });
-
-    // implement delay to simulate computer choosing
-    setTimeout(this.checkWin.bind(this), 800);
+    this.setState({
+      playerPick: e.target.value,
+      computerPick: this.state.choices[Math.floor(Math.random() * 3)]
+    }, () => this.checkWin());
   }
 
   checkWin() {
-    // set random computer pick
-    this.setState({ computerPick: this.state.choices[Math.floor(Math.random() * 3)] });
-
     // use the winConditions object to determine if the user pick beats the computer
     if (this.state.playerPick === this.state.computerPick) {
       // declare tie
@@ -59,8 +55,6 @@ class App extends Component {
         computerScore: this.state.computerScore + 1
       });
     }
-
-    this.setState({ playing: false });
   }
 
   reset() {
@@ -68,7 +62,6 @@ class App extends Component {
       playerPick: null,
       computerPick: null,
       winner: 'Choose wisely',
-      playing: false,
       playerScore: 0,
       computerScore: 0
     });
@@ -87,7 +80,6 @@ class App extends Component {
             />
             <Buttons
               play={this.play.bind(this)}
-              playing={this.state.playing}
             />
             <Scoreboard
               playerScore={this.state.playerScore}
